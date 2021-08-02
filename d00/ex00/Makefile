@@ -6,10 +6,10 @@ all:  $(NAME)
 
  $(NAME) : $(MEGAPHONE)
 	@clang++ $(CFLAGS) $(MEGAPHONE) -o $(NAME)
-	@echo "\n\033[32m--------- SUCCESSFUL ---------\033[0m"
+	@echo "\033[32m--------- SUCCESSFUL ---------\033[0m"
 
-clean:
+fclean:
 	@rm megaphone
 
-re : clean all
+re : fclean all
  

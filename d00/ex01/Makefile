@@ -1,8 +1,8 @@
-NAME = phonebook
+
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = 
+SRCS = phonebook.cpp 
 
 OBJ = %.c:%.o
 all: $(NAME)

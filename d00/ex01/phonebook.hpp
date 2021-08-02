@@ -14,31 +14,73 @@
 #define PHONEBOOK_HPP
 
 #include <iostream>
-#include <string>
+#include <cstring>
+#include <iomanip>
+#include <climits>
+
+using std::string;
 
 class phonebook
 {
 private:
-	std::string		_first_name;
-	std::string		_last_name;
-	std::string		_nackename;
+	string		_first_name;
+	string		_last_name;
+	string		_nickename;
 public:
-	phonebook(std::string first_name, std::string last_name, std::string nakename);
+	int command;
+	phonebook() {};
+	// phonebook(int index, string first_name, string last_name,
+	// 	string nakename);
 	~phonebook();
+	string	width(string str);
 	void	add();
-	void	search();
+	void	search(int index);
 	void	exit();
+	void	print(int index);
 };
 
-phonebook::phonebook(std::string first_name, std::string last_name, std::string nackename)
+// phonebook::phonebook(int index, string first_name, string last_name,
+// 	string nickename)
+// {
+// 	// this->_index = index;
+// 	this->_first_name = first_name;
+// 	this->_last_name = last_name;
+// 	this->_nickename = nickename;
+// }
+
+string	phonebook::width(string str)
 {
-	this->_first_name = first_name;
-	this->_last_name = last_name;
-	this->_nackename = nackename;
+	if (str.length() >= 10)
+	{
+		str.erase(str.begin() + 9, str.end());
+		str.append(".");
+	}
+	return (str);
 }
+
+void	phonebook::search(int index)
+{
+	if (index == 0)
+		std::cout	<< "|" << std::setw(10) << "Index"
+					<< "|" << std::setw(10) << "First Name"
+					<< "|" << std::setw(10) << "Last Name"
+					<< "|" << std::setw(10) << "Nickname" << "|\n";
+	std::cout	<< "|" << std::setw(10) << index
+				<< "|" << std::setw(10) << width(this->_first_name)
+				<< "|" << std::setw(10) << width(this->_last_name)
+				<< "|" << std::setw(10) << width(this->_nickename) << "|\n";
+}
+
+void	phonebook::print(int index)
+{
+	std::cout << index << " " << this->_first_name << " "
+		<< this->_last_name << " " << this->_nickename << std::endl;
+}
+
 
 phonebook::~phonebook()
 {
+	return ;
 }
 
 #endif
