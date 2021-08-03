@@ -15,8 +15,7 @@ $(NAME): $(OBJ)
 clean:
 	@rm *.o
 
-fclean:
-	@clean
+fclean: clean
 	@rm phonebook
 
 re : fclean all
