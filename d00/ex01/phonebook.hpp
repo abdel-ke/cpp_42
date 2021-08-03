@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/30 23:19:59 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/02 23:21:42 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/08/03 02:58:34 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,24 @@
 #include <cstring>
 #include <iomanip>
 #include <climits>
-#include "Contacts.hpp"
+#include "Contact.hpp"
 
 using std::string;
 
 class phonebook
 {
-	public:
-		int command;
-		phonebook() {};
-		string	width(string str);
-		void	add();
-		void	search(int index);
-		void	exit();
-		void	print(int index);
 	private:
-		contacts	_contact[8];
+		contact		_contact[8];
+		int			_current = 0;
+		int			_index;
 		string		_first_name;
 		string		_last_name;
 		string		_nickename;
+	public:
+		phonebook() {};
+		void	add();
+		void	search();
+		void	display_contact();
 };
 
 #endif
