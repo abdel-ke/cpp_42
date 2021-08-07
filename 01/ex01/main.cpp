@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 01:48:23 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/07 02:10:41 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/08/07 02:20:11 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int main()
 		std::cout << "Wrong Number !!\n";
 	else
 	{
-			z = zombieHorde(nbr, "Zombie");
-			delete[] z;
+		z = zombieHorde(nbr, "Zombie");
+		delete[] z;
 	}
 	return (0);
 }
