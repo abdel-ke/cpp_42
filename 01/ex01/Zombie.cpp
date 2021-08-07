@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/06 22:22:00 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/07 01:34:36 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/08/07 02:12:20 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Zombie::~Zombie()
 
 void			Zombie::annonce()
 {
-	std::cout << this->_name << "BraiiiiiiinnnzzzZ...\n";
+	std::cout << this->_name << " BraiiiiiiinnnzzzZ...\n";
 }
 
 void			Zombie::setNameOfZombie(std::string name)

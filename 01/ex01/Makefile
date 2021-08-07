@@ -19,7 +19,7 @@ $(OBJ): $(OBJ_DIR)/%.o: %.cpp Zombie.hpp
 	@clang++ -c $< -o $@
 
 clean:
-	@rm $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@rm $(NAME)
