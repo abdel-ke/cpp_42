@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 16:25:29 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/11 02:23:12 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/08/11 21:28:27 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,12 @@ std::string	replace(std::string line, std::string s1, std::string s2)
 	int	first = line.find(s1);
 	if (first != -1)
 	{
-		line.erase(first, s1.length());
-		line.insert(first, s2);
+		while (first != -1)
+		{
+			line.erase(first, s1.length());
+			line.insert(first, s2);
+			first = line.find(s1, first);
+		}
 	}
 	return (line);
 }
@@ -36,6 +40,7 @@ int main(int ac, char **av)
 	if (ac != 4)
 	{
 		std::cout << "Error Args\n";
+		return (0);
 	}
 	if (f_in.is_open())
 	{
@@ -49,4 +54,6 @@ int main(int ac, char **av)
 		f_out.close();
 		f_in.close();
 	}
+	else
+		std::cout << "Error in open file " << std::endl;
 }
