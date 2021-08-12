@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 21:41:07 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/12 22:26:30 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/08/12 22:57:43 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ void	Karen::complain( std::string level )
 		if (str[i] == level)
 		{
 			(this->*mood[i])();
-			return ;
+			break ;
 		}	
 }
