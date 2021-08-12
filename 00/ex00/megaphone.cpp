@@ -6,12 +6,11 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 23:31:01 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/12 15:27:15 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/08/12 15:34:40 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <string>
 
 int main(int ac, char **av)
 {
