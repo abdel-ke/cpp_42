@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 00:37:58 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/13 21:28:22 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/08/15 15:23:29 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Fixed
 {
 private:
 	int			_value;
-	// const int	_bits;// = 8;
+	static const int	_bits;
 public:
 	Fixed();
 	Fixed(Fixed const &src);
