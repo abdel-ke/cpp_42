@@ -19,7 +19,7 @@ Fixed::Fixed()
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const &src)
+Fixed::Fixed(Fixed &src)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
