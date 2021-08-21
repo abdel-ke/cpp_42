@@ -25,8 +25,8 @@ private:
 	string		_phone_number;
 	string		_darkest_secret;
 public:
-	contact(){};
-	~contact(){return ;}; 
+	contact();
+	~contact(); 
 	//getter
 	string		get_First_name();
 	string		get_Last_name();

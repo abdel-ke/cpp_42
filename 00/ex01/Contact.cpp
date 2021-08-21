@@ -12,6 +12,19 @@
 
 #include "Contact.hpp"
 
+//Constructor
+contact::contact()
+{
+	std::cout << "Calling Constructor\n";
+}
+
+//destructor
+contact::~contact()
+{
+	std::cout << "Calling Destructor\n";
+}
+
+//getter
 string	contact::get_First_name()
 {
 	return (this->_first_name);
