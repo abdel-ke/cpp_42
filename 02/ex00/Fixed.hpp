@@ -18,11 +18,11 @@
 class Fixed
 {
 private:
-	int			_value;
-	static const int	_bits;
+	int					_fixedPoint;
+	static const int	_bits = 8;
 public:
 	Fixed();
-	Fixed(Fixed const &src);
+	Fixed(Fixed &src);
 	~Fixed();
 	Fixed &    operator=(Fixed const & rhs);
 	int getRawBits( void ) const;
