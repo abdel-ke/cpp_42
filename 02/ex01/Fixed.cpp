@@ -31,14 +31,14 @@ Fixed::~Fixed()
 	std::cout << "Destructor called\n";
 }
 
-int	Fixed::toInt( void ) const
-{
-	return (this->_point / ( 1 << this->_bits));
-}
-
 float Fixed::toFloat( void ) const
 {
 	return ((float)this->_point / ( 1 << this->_bits));
+}
+
+int	Fixed::toInt( void ) const
+{
+	return (this->_point / ( 1 << this->_bits));
 }
 
 Fixed & Fixed::operator=(Fixed const &obj)
