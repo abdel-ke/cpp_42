@@ -8,7 +8,7 @@ SRCS =	main.cpp		\
 
 OBJ_DIR = ./objs
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRCS:.cpp=.o))
-# OBJ = $(SRCS:.cpp=.o)
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
@@ -18,10 +18,8 @@ $(NAME): $(OBJ)
 $(OBJ): $(OBJ_DIR)/%.o: %.cpp Zombie.hpp
 	@mkdir -p $(dir $@)
 	@clang++ -c $< -o $@
-# @gcc -c $< -o $@
 
 clean:
-# @rm $(OBJ);
 	@rm -rf $(OBJ_DIR)
 
 fclean: clean

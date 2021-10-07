@@ -6,12 +6,12 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 13:59:32 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/08 16:22:36 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/10/07 16:17:59 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "headers/HumanA.hpp"
+#include "headers/HumanB.hpp"
 
 int main()
 {

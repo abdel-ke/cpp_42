@@ -6,9 +6,9 @@ SRCS 	=	main.cpp	\
 			HumanA.cpp	\
 			HumanB.cpp
 
-SRCS_H	=	Weapon.hpp	\
-			HumanA.hpp	\
-			HumanB.hpp
+SRCS_H	=	headers/Weapon.hpp\
+			headers/HumanA.hpp\
+			headers/HumanB.hpp
 
 OBJ_DIR = ./objs
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRCS:.cpp=.o))

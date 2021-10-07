@@ -6,25 +6,27 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 13:37:26 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/08 15:28:14 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/10/07 17:57:59 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include "headers/HumanA.hpp"
 
 HumanA::~HumanA()
 {
-	std::cout << "HumanA Destructor\n";
+	std::cout << BRED << "HumanA Destructor\n";
 }
 
-HumanA::HumanA(std::string name, Weapon &w): _name(name), _weapon(w){}
-
+HumanA::HumanA(std::string name, Weapon &w): _name(name), _weapon(w)
+{
+	std::cout << BGRN << "HumanA Constructor with parameters" << std::endl;
+}
 void	HumanA::attack()
 {
-	std::cout << getName() << " attacks with his " << _weapon.getType() << std::endl;
+	std::cout << BYEL << getName() << " attacks with his " << _weapon.getType() << std::endl;
 }
 
-std::string	HumanA::getName()
+std::string	HumanA::getName() const
 {
 	return (this->_name);
 }

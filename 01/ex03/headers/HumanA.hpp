@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/07 13:36:41 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/08 16:22:39 by abdel-ke         ###   ########.fr       */
+/*   Created: 2021/08/07 13:32:36 by abdel-ke          #+#    #+#             */
+/*   Updated: 2021/10/07 17:58:22 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef HUMANB_HPP
-# define HUMANB_HPP
+# ifndef HUMANA_HPP
+# define HUMANA_HPP
 
 # include "Weapon.hpp"
 
-class HumanB
+class HumanA
 {
 private:
 	std::string	_name;
-	Weapon	*_weapon;
+	Weapon		&_weapon;
 public:
-	HumanB();
-	~HumanB();
-	HumanB(std::string name);
+	~HumanA();
+	HumanA(std::string str, Weapon &w);
 	void	attack();
-	std::string	getName();
+	std::string	getName() const;
 	void	setName(std::string name);
-	void	setWeapon(Weapon &Weapon);
 };
 
 # endif

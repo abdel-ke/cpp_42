@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 16:25:29 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/11 21:28:27 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/10/07 18:17:22 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main(int ac, char **av)
 	std::string line;
 	
 	std::fstream f_in(av[1], std::fstream::in);
-	if (ac != 4)
+	if (ac != 1)
 	{
 		std::cout << "Error Args\n";
 		return (0);
