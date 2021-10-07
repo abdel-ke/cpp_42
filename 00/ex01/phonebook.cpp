@@ -6,11 +6,23 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/31 11:39:11 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/03 18:34:52 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/10/07 11:26:13 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
+
+Phonebook::Phonebook()
+{
+	// std::cout << "Calling PHONEBOOK Constructor" << std::endl;
+	_current = -1;
+	_index = 0;
+}
+
+Phonebook::~Phonebook()
+{
+	// std::cout << "Calling PHONEBOOK Destructor" << std::endl;
+}
 
 void	display()
 {
@@ -19,7 +31,7 @@ void	display()
     std::cout << "|                  1-ADD                  |" << std::endl;
     std::cout << "|                 2-SEARCH                |" << std::endl;
     std::cout << "|                  3-EXIT                 |" << std::endl;
-    std::cout << "+-----------------------------------------+" << std::endl;
+    std::cout << "+-----------------------------------------+" << std::endl << reset;
 }
 
 string	width(string str)
@@ -32,23 +44,24 @@ string	width(string str)
 	return (str);
 }
 
-void	phonebook::display_contact()
+void	Phonebook::display_contact()
 {
 	std::cout	<< BYEL << "|     INDEX|FIRST NAME| LAST NAME|  NICKNAME|\n";
-	for (int i = 0; i < this->_index; i++)
+	for (int i = 0; i <= this->_index; i++)
 	{
 		std::cout
-		<< "|" << std::setw(10) << i
+		<< "|" << std::setw(10) << i + 1
 		<< "|" << std::setw(10) << width(this->_contact[i].get_First_name())
 		<< "|" << std::setw(10) << width(this->_contact[i].get_Last_name())
 		<< "|" << std::setw(10) << width(this->_contact[i].get_Nickname())
 		<< "|" << std::endl;
 	}
+	std::cout << reset;
 }
 
-void	phonebook::add()
+void	Phonebook::add()
 {
-	contact		contact;
+	Contact		contact;
 	string		buff;
 	std::cout << BMAG << "First name: " << reset;
 	std::getline(std::cin, buff);
@@ -65,49 +78,62 @@ void	phonebook::add()
 	std::replace(buff.begin(), buff.end(), '\t', ' ');
 	contact.set_Nickname(buff);
 	
-	// std::cout << MAG << "Phone number: " << reset;
-	// std::getline(std::cin, buff);
-	// std::replace(buff.begin(), buff.end(), '\t', ' ');
-	// contact.set_Phone_number(buff);
+	std::cout << BMAG << "Phone number: " << reset;
+	std::getline(std::cin, buff);
+	std::replace(buff.begin(), buff.end(), '\t', ' ');
+	contact.set_Phone_number(buff);
 
-	// std::cout << MAG << "Darkest secret: " << reset;
-	// std::getline(std::cin, buff);
-	// std::replace(buff.begin(), buff.end(), '\t', ' ');
-	// contact.set_Darkest_secret(buff);
-	this->_contact[this->_current % 2] = contact;
-	this->_current++;
-	if (this->_current <= 2)
-		this->_index = this->_current;
-	std::cout << BGRN << "ADDED SUCCESSFUL" << std::endl;
+	std::cout << BMAG << "Darkest secret: " << reset;
+	std::getline(std::cin, buff);
+	std::replace(buff.begin(), buff.end(), '\t', ' ');
+	contact.set_Darkest_secret(buff);
+
+	this->_contact[++(this->_current) % MAX_CONTACT] = contact;
+	_index = _current < MAX_CONTACT ? _current : _index;
+	std::cout << BGRN << "ADDED SUCCESSFUL" << std::endl << reset;
+	display();
 }
 
-void	phonebook::search()
+void	Phonebook::search()
 {
-	contact	contact;
-	int		index;
+	std::string	str;
+	int			index;
 
-	display_contact();
-	std::cout << BBLU << "PRINT INDEX: ";
-	std::cin >> index;
-	if (std::cin.fail())
-		std::cout << BRED << "INDEX INVALID !\n" << reset;
-	else
+	if (_current != -1)
 	{
-		if (index < this->_current)
-			std::cout << BYEL 
-			<< "FIRST NAME:\t" << this->_contact[index].get_First_name() << std::endl
-			<< "LAST NAME:\t" << this->_contact[index].get_Last_name() << std::endl
-			<< "NICKNAME:\t" << this->_contact[index].get_Nickname() << std::endl;
-		else
-			std::cout << BRED << "INDEX NOT EXIST !\n" << reset;
+		display_contact();
+		while (true)
+		{
+			std::cout << BBLU << "PRINT INDEX: ";
+			std::getline(std::cin, str);
+			try{
+				index = std::stoi(str);
+				if (index >= 1 && index <= (_current % MAX_CONTACT) + 1)
+				{
+					std::cout << BYEL 
+					<< "FIRST NAME\t: " << this->_contact[index - 1].get_First_name() << std::endl
+					<< "LAST NAME\t: " << this->_contact[index - 1].get_Last_name() << std::endl
+					<< "NICKNAME\t: " << this->_contact[index - 1].get_Nickname() << std::endl
+					<< "PHONE NUMBER\t: " << this->_contact[index - 1].get_Phone_number() << std::endl
+					<< "DARKSET NUMBER\t: " << this->_contact[index - 1].get_Darkest_secret() << std::endl
+					<< reset;
+					break ;
+				}
+				else
+					std::cout << BRED << "WRONG INDEX !\n" << reset;
+			}
+			catch(std::exception& e){
+				std::cout << BRED << "WRONG INDEX !\n" << reset;
+			}
+		}
 	}
-	std::cin.clear();
-	std::cin.ignore(INT_MAX, '\n');
+	else
+		std::cout << BMAG << "Contact Vide !!\n" << reset;
 }
 
 int main()
 {
-	phonebook phone;
+	Phonebook phone;
 	string	command;
 
 	display();

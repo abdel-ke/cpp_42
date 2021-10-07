@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 23:04:02 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/03 12:04:28 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/10/07 10:54:13 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 using std::string;
 
-class contact
+class Contact
 {
 private:
 	string		_first_name;
@@ -25,14 +25,14 @@ private:
 	string		_phone_number;
 	string		_darkest_secret;
 public:
-	contact();
-	~contact(); 
+	Contact();
+	~Contact(); 
 	//getter
-	string		get_First_name();
-	string		get_Last_name();
-	string		get_Nickname();
-	string		get_Phone_number();
-	string		get_Darkest_secret();
+	string		get_First_name() const;
+	string		get_Last_name() const;
+	string		get_Nickname() const;
+	string		get_Phone_number() const;
+	string		get_Darkest_secret() const;
 	//setter
 	void		set_First_name(string first_name);
 	void		set_Last_name(string last_name);
