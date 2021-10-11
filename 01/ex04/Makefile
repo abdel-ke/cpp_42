@@ -1,5 +1,5 @@
 NAME = replace
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRCS =	main.cpp	\
 

@@ -1,5 +1,5 @@
 NAME = zombie
-CFLAGS = -Wall -Werror -Werror
+CFLAGS = -std=c++98 -Wall -Werror -Werror
 
 SRCS =	main.cpp		\
 		Zombie.cpp		\
