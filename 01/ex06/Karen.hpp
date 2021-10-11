@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/08 21:16:10 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/08 21:18:22 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/10/08 18:32:24 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 # define KAREN_HPP
 
 #include <iostream>
+
+//Regular bold color text
+#define BGRN "\e[1;32m"
+#define BRED "\e[1;31m"
+#define BYEL "\e[1;33m"
+#define BCYN "\e[1;36m"
+#define BMAG "\e[1;35m"
+#define BBLU "\e[1;34m"
+#define reset "\e[0m"
 
 class Karen
 {

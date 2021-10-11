@@ -1,5 +1,5 @@
 NAME = replace
-CFLAGS = #-Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS =	main.cpp	\
 

@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/05 18:33:55 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/10/07 14:55:23 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/10/09 18:09:55 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ private:
 	std::string	_name;
 public:
 	Zombie();
+	Zombie(std::string);
 	~Zombie();
-	std::string getzombie();
-	void	setzombie( std::string name );
-	void	announce();
+	std::string getname();
+	void	setname( std::string name );
+	void	announce( void );
 };
 
 Zombie*	newZombie( std::string name );
