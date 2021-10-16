@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/16 15:20:48 by abdel-ke          #+#    #+#             */
+/*   Updated: 2021/10/16 19:41:48 by abdel-ke         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 int const Fixed::_bits = 8;
 
-Fixed::Fixed()
+Fixed::Fixed() : _point(0)
 {
-	this->_point = 0;
 	std::cout << "Default constructor called\n";
 }
 
@@ -33,12 +44,12 @@ Fixed::~Fixed()
 
 float Fixed::toFloat( void ) const
 {
-	return ((float)this->_point / ( 1 << this->_bits));
+	return ((float)this->_point / (1 << this->_bits));
 }
 
 int	Fixed::toInt( void ) const
 {
-	return (this->_point / ( 1 << this->_bits));
+	return (this->_point / (1 << this->_bits));
 }
 
 Fixed & Fixed::operator=(Fixed const &obj)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/16 15:20:30 by abdel-ke          #+#    #+#             */
+/*   Updated: 2021/10/16 19:40:52 by abdel-ke         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
@@ -15,7 +27,7 @@ public:
 	Fixed(const int);
 	Fixed(const float);
 	~Fixed();
-	Fixed & operator=(Fixed const &obj);
+	Fixed & operator=(const Fixed &obj);
 	float toFloat( void ) const;
 	int toInt( void ) const;
 };
