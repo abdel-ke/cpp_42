@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 15:20:48 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/10/16 19:41:48 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/10/18 15:51:13 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int const Fixed::_bits = 8;
 
 Fixed::Fixed() : _point(0)
 {
-	std::cout << "Default constructor called\n";
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const &obj)
@@ -34,7 +34,7 @@ Fixed::Fixed(const int point)
 Fixed::Fixed(const float point)
 {
 	std::cout << "Float constructor called\n";
-	this->_point = roundf(point * ((float)(1 << this->_bits)));
+	this->_point = roundf(point * (1 << this->_bits));
 }
 
 Fixed::~Fixed()
