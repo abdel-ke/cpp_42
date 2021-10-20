@@ -3,7 +3,8 @@ CFLAGS = -std=c++98 -Wall -Wextra -Werror
 HEADER = ClapTrap.hpp
 
 SRCS = 	main.cpp	\
-		ClapTrap.cpp
+		ClapTrap.cpp \
+		ScavTrap.cpp
 
 
 OBJ = $(SRCS:.cpp=.o)
