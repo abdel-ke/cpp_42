@@ -38,10 +38,13 @@ test test::operator=(test t)
 	}
 }
 
+#define	COUT(X) std::cout << X << std::endl;
+
 int main()
 {
-	test t1(0,1,2), t2(0, 5, 6);
-	t1 = t2;
-	t1.geter();
-	t2.geter();
+	COUT(5);
+	// test t1(0,1,2), t2(0, 5, 6);
+	// t1 = t2;
+	// t1.geter();
+	// t2.geter();
 }
