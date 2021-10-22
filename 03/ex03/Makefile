@@ -1,11 +1,12 @@
-NAME = ScavTrap
-CFLAGS = -std=c++98 -Wall -Wextra -Werror
-HEADER = ClapTrap.hpp ScavTrap.hpp
+NAME = DiamondTrap
+CFLAGS = -std=c++98 -Wall -Wextra -Werror -Wshadow -Wno-shadow
+HEADER = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
 SRCS = 	main.cpp	\
 		ClapTrap.cpp \
-		ScavTrap.cpp
-
+		ScavTrap.cpp \
+		FragTrap.cpp \
+		DiamondTrap.cpp
 
 OBJ = $(SRCS:.cpp=.o)
 all : $(NAME)

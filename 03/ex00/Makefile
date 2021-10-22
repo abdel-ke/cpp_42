@@ -1,21 +1,22 @@
-NAME = claptrap
-CFLAGS = -Wall -Wextra -Werror
+NAME = ClapTrap
+CFLAGS = -std=c++98 -Wall -Wextra -Werror
+HEADER = ClapTrap.hpp
 
-SRCS =	ClapTrap.cpp	\
-		main.cpp
+SRCS = 	main.cpp	\
+		ClapTrap.cpp
+
 
 OBJ = $(SRCS:.cpp=.o)
+all : $(NAME)
 
-all: $(NAME)
-
-$(NAME): $(OBJ) ClapTrap.hpp
+$(NAME) : $(OBJ) $(HEADER)
 	@clang++ $(CFLAGS) $(SRCS) -o $(NAME)
 	@echo "\033[32m--------- SUCCESSFUL ---------\033[0m"
 
 clean:
 	@rm *.o
 
-fclean:clean
+fclean: clean
 	@rm $(NAME)
 
 re: fclean all

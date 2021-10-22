@@ -15,7 +15,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "Parametrized ClapTrap constructor called" << std::endl;
+	std::cout << "Parameterised ClapTrap constructor called" << std::endl;
 	_name = name;
 	_Hitpoints = 10;
 	_Enegy_point = 10;
@@ -30,7 +30,7 @@ ClapTrap::ClapTrap(ClapTrap const &obj)
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &obj)
 {
-	std::cout << "Assignment Operator called" << std::endl;
+	std::cout << "Assignment ClapTrap Operator called" << std::endl;
 	if (this != &obj)
 	{
 		this->_name = obj._name;

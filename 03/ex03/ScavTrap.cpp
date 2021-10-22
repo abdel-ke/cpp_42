@@ -10,7 +10,7 @@ ScavTrap::ScavTrap()
 
 ScavTrap::ScavTrap(std::string name)
 {
-	std::cout << "Parametrised ScavTrap constructor called" << std::endl;
+	std::cout << "Parameterised ScavTrap constructor called" << std::endl;
 	this->_name = name;
 	this->_Hitpoints = 100;
 	this->_Enegy_point = 50;
@@ -19,7 +19,7 @@ ScavTrap::ScavTrap(std::string name)
 
 ScavTrap::ScavTrap(const ScavTrap &obj)
 {
-	std::cout << "ScavTrap Copy Constructor called" << std::endl;
+	std::cout << "Copy ScavTrap Constructor called" << std::endl;
 	*this = obj;
 }
 
@@ -30,7 +30,7 @@ ScavTrap::~ScavTrap()
 
 ScavTrap	&ScavTrap::operator=(const ScavTrap &obj)
 {
-	std::cout << "Assignment operator called" << std::endl;
+	std::cout << "Assignment ScavTrap operator called" << std::endl;
 	if (this != &obj)
 	{
 		this->_name = obj._name;

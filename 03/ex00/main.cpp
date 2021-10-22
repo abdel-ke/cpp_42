@@ -2,9 +2,11 @@
 
 int main()
 {
-	ClapTrap clap;
+	ClapTrap instance0;
+    ClapTrap instance1("claptrap");
+    ClapTrap instance2(instance1);
 
-	clap.attack("KAMAL");
-	clap.takeDamage(25);
-	clap.beRepaired(30);
+    instance2.attack("target");
+    instance2.takeDamage(30);
+    instance2.beRepaired(20);
 }
