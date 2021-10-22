@@ -45,3 +45,9 @@ void	FragTrap::highFivesGuys( void )
 {
 	std::cout << "High Fives Guys called" << std::endl;
 }
+
+void	FragTrap::attack(std::string const &target)
+{
+	std::cout << "FragTrap " << _name << " attack " << target << " causing "
+	<< _Attack_damage << " points of damage!" << std::endl;
+}

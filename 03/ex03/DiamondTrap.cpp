@@ -11,7 +11,7 @@ DiamondTrap::DiamondTrap(std::string name)
 	this->_DiamondName = name;
 	ClapTrap::_name = name + "_clap_name";
 	this->_Hitpoints = FragTrap::_Hitpoints;
-	this->_Enegy_point = FragTrap::_Enegy_point;
+	this->_Enegy_point = ScavTrap::_Enegy_point;
 	this->_Attack_damage = FragTrap::_Attack_damage;
 }
 
