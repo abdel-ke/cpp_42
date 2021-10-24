@@ -1,4 +1,4 @@
-#include "Dog.hpp"
+#include "headers/Dog.hpp"
 
 Dog::Dog()
 {
@@ -16,12 +16,20 @@ Dog::Dog(const Dog &obj)
 Dog	&Dog::operator = (const Dog &obj)
 {
 	if (this != &obj)
+	{
 		this->_type = "Dog";
+		this->br = new Brain();
+	}
 	return *this;
 }
 
 Dog::~Dog()
 {
 	std::cout << "Dog Destructor" << std::endl;
-	delete br;
+	delete this->br;
+}
+
+void	Dog::makeSound() const
+{
+	std::cout << "The Dog make sound!" << std::endl;
 }

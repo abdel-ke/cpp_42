@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "headers/Animal.hpp"
 
 Animal::Animal()
 {
@@ -26,7 +26,7 @@ Animal::~Animal()
 
 void	Animal::makeSound() const
 {
-	std::cout << "The " << this->_type << " sound!" << std::endl;
+	std::cout << "The animal make sound!" << std::endl;
 }
 
 std::string	Animal::getType() const

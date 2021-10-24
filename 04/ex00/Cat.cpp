@@ -1,4 +1,4 @@
-#include "Cat.hpp"
+#include "headers/Cat.hpp"
 
 Cat::Cat()
 {
@@ -22,4 +22,9 @@ Cat	&Cat::operator = (const Cat &obj)
 Cat::~Cat()
 {
 	std::cout << "Cat Destructor" << std::endl;
+}
+
+void	Cat::makeSound() const
+{
+	std::cout << "The Cat make sound!" << std::endl;
 }

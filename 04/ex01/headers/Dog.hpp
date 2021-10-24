@@ -4,15 +4,16 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class	Dog: virtual public Animal
+class	Dog: public Animal
 {
 	private:
-		Brain *br;		
+		Brain *br;
 	public:
 		Dog();
 		Dog(const Dog &);
 		~Dog();
 		Dog	&operator = (const Dog &);
+		void	makeSound() const;
 };
 
 #endif

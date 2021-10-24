@@ -4,7 +4,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class	Cat: virtual public Animal
+class	Cat: public Animal
 {
 	private:
 		Brain *br;
@@ -13,6 +13,7 @@ class	Cat: virtual public Animal
 		Cat(const Cat &);
 		~Cat();
 		Cat	&operator = (const Cat &);
+		void	makeSound() const;
 };
 
 #endif

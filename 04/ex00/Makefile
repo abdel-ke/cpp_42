@@ -1,29 +1,32 @@
 NAME = Animal
 
-SRCS		=   main.cpp Animal.cpp  Dog.cpp Cat.cpp
-HEADERS 	= Animal.hpp Dog.hpp Cat.hpp
+SRCS		=   main.cpp Animal.cpp  Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+HEADERS 	= headers/Animal.hpp headers/Dog.hpp headers/Cat.hpp headers/WrongAnimal.hpp headers/WrongCat.hpp
 CC			= clang++
 
 CPP_FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-OBJS		= $(SRCS:%.cpp=%.o)
+OBJ_DIR = ./objs
+OBJS		= $(addprefix $(OBJ_DIR)/,$(SRCS:%.cpp=%.o))
 
 RM			= rm -rf
+
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) -o $(NAME)
 
-
-%.o: %.cpp $(HEADERS)
+$(OBJS): $(OBJ_DIR)/%.o: %.cpp $(HEADERS)
+	@mkdir -p $(dir $@)
 	$(CC) -c $(CPP_FLAGS) $< -o $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJ_DIR)
 
 fclean: clean
 	$(RM) $(NAME)
+
 
 re: fclean all
 

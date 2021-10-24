@@ -2,8 +2,6 @@
 #define ANIMAL_HPP
 
 #include <iostream>
-// #include "Cat.hpp"
-// #include "Dog.hpp"
 
 class Animal
 {
@@ -12,10 +10,10 @@ class Animal
 	public:
 		Animal();
 		Animal(const Animal &);
-		~Animal();
+		virtual ~Animal();
 		Animal &operator = (const Animal &);
-		void	makeSound() const;
 		std::string	getType() const;
+		virtual void	makeSound() const;
 };
 
 #endif
