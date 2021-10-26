@@ -33,3 +33,10 @@ void	Cat::makeSound() const
 {
 	std::cout << "The Cat make sound!" << std::endl;
 }
+
+// std::string Cat::getbrain(void) const
+// {
+// 	const std::string *str;
+// 	str = br->getbrain();
+// 	return *str;
+// }

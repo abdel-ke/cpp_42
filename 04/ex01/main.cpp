@@ -8,6 +8,8 @@ int main(int ac, char **av)
 {
 	if (ac == 2)
 	{
+		const Animal* j = new Dog();
+		const Animal* i = new Cat();
 		{
 			int size = std::stoi(av[1]);
 			std::cout << "---------------Declaration--------------\n";
@@ -35,13 +37,11 @@ int main(int ac, char **av)
 		}
 		{
 			std::cout << "-----------------DEEP CAT----------------------\n";
-			
-		}
+			Cat c1;
 
+		}
+		std::cout << "-------------------------------------\n";
+		delete i;
+		delete j;//should not create a leak
 	}
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
-	// std::cout << "-------------------------------------\n";
-	// delete i;
-	// delete j;//should not create a leak
 }
