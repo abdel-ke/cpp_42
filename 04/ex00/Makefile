@@ -1,6 +1,6 @@
 NAME = Animal
 
-SRCS		=   main.cpp Animal.cpp  Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS		= main.cpp src/Animal.cpp  src/Dog.cpp src/Cat.cpp src/WrongAnimal.cpp src/WrongCat.cpp
 HEADERS 	= headers/Animal.hpp headers/Dog.hpp headers/Cat.hpp headers/WrongAnimal.hpp headers/WrongCat.hpp
 CC			= clang++
 
