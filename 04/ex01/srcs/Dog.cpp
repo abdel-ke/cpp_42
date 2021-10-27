@@ -1,4 +1,4 @@
-#include "headers/Dog.hpp"
+#include "../headers/Dog.hpp"
 
 Dog::Dog()
 {
@@ -37,9 +37,7 @@ void	Dog::makeSound() const
 
 void	Dog::getBrain() const
 {
-	const std::string *str = this->br->getbrain();
-	for (int i = 0; i < 100; i++)
-		std::cout << str[i] << std::endl;
+	this->br->getBrain();
 }
 
 void	Dog::setBrain(std::string str)

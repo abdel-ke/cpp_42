@@ -1,4 +1,4 @@
-#include "headers/Brain.hpp"
+#include "../headers/Brain.hpp"
 #include <string>
 
 Brain::Brain()
@@ -21,9 +21,10 @@ Brain	&Brain::operator=(const Brain &obj)
 	return *this;
 }
 
-const std::string *Brain::getbrain( void ) const
+void	Brain::getBrain(void) const
 {
-	return this->ideas;
+	for (int i = 0; i < 4; i++)
+		std::cout << this->ideas[i] << std::endl;
 }
 
 void	Brain::setbrain(std::string ideas)

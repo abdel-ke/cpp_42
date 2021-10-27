@@ -1,4 +1,4 @@
-#include "headers/Cat.hpp"
+#include "../headers/Cat.hpp"
 
 Cat::Cat()
 {
@@ -20,7 +20,7 @@ Cat	&Cat::operator = (const Cat &obj)
 	{
 		this->_type = "Cat";
 		this->br = new Brain();
-		*this->br = *obj.br;
+		*br = *obj.br;
 	}
 	return *this;
 }
@@ -38,9 +38,7 @@ void	Cat::makeSound() const
 
 void	Cat::getBrain(void) const
 {
-	const std::string *str = this->br->getbrain();
-	for (int i = 0; i < 100; i++)
-		std::cout << str[i] << std::endl;
+	this->br->getBrain();
 }
 
 
