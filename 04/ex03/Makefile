@@ -1,7 +1,20 @@
 NAME = Animal
 
-SRCS		=   main.cpp srcs/Animal.cpp  srcs/Dog.cpp srcs/Cat.cpp srcs/Brain.cpp
-HEADERS 	=	headers/Animal.hpp headers/Dog.hpp headers/Cat.hpp headers/Brain.hpp
+SRCS		=	main.cpp				\
+				srcs/AMateria.cpp		\
+				srcs/Character.cpp		\
+				srcs/Cure.cpp			\
+				srcs/Ice.cpp			\
+				srcs/MateriaSource.cpp	\
+
+HEADERS 	=	headers/AMateria.hpp		\
+				headers/ICharacter.hpp		\
+				headers/Character.hpp		\
+				headers/Cure.hpp			\
+				headers/Ice.hpp				\
+				headers/IMateriaSource.hpp	\
+				headers/MateriaSource.hpp	\
+
 CC			=	clang++
 
 CPP_FLAGS	=	-Wall -Wextra -Werror -std=c++98

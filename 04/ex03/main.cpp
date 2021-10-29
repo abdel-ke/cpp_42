@@ -1,4 +1,10 @@
-
+#include "headers/AMateria.hpp"
+#include "headers/Cure.hpp"
+#include "headers/Ice.hpp"
+#include "headers/ICharacter.hpp"
+#include "headers/Character.hpp"
+#include "headers/IMateriaSource.hpp"
+#include "headers/MateriaSource.hpp"
 
 int main()
 {

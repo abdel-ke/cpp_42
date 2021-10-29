@@ -31,3 +31,8 @@ AMateria::AMateria(std::string const &type)
 	std::cout << "AMateria parametrised" << std::endl;
 	this->_type = type;
 }
+
+std::string	const & AMateria::getType() const
+{
+	return this->_type;
+}
