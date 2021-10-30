@@ -2,18 +2,18 @@
 
 MateriaSource::MateriaSource() : _counter(0)
 {
-	std::cout << "MateriaSource default destructor" << std::endl;
+	//std::cout << "MateriaSource default destructor" << std::endl;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &obj)
 {
-	std::cout << "MateriaSource Copy constructor" << std::endl;
+	//std::cout << "MateriaSource Copy constructor" << std::endl;
 	*this = obj;
 }
 
 MateriaSource	&MateriaSource::operator = (const MateriaSource &obj)
 {
-	std::cout << "MateriaSource Operator" << std::endl;
+	//std::cout << "MateriaSource Operator" << std::endl;
 	if (this != &obj)
 	{
 		_counter = obj._counter;
@@ -26,7 +26,7 @@ MateriaSource	&MateriaSource::operator = (const MateriaSource &obj)
 void	MateriaSource::learnMateria(AMateria *materia)
 {
 	if (_counter >= 0 && _counter < 4)
-		_inventory[_counter] = materia;
+		_inventory[_counter++] = materia;
 }
 
 AMateria	*MateriaSource::createMateria(std::string const & type)
@@ -34,5 +34,5 @@ AMateria	*MateriaSource::createMateria(std::string const & type)
 	for (int i = 0; i < _counter; i++)
 		if (_inventory[i]->getType() == type)
 			return _inventory[i]->clone();
-	return NULL;
+	return 0;
 }

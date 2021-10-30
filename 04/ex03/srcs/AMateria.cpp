@@ -2,23 +2,23 @@
 
 AMateria::AMateria()
 {
-	std::cout << "Amateria efault constructor" << std::endl;
+	//std::cout << "Amateria efault constructor" << std::endl;
 }
 
 AMateria::AMateria(const AMateria &obj)
 {
-	std::cout << "AMateria copy constructor" << std::endl;
+	//std::cout << "AMateria copy constructor" << std::endl;
 	*this = obj;
 }
 
 AMateria::~AMateria()
 {
-	std::cout << "AMateria destructor" << std::endl;
+	//std::cout << "AMateria destructor" << std::endl;
 }
 
 AMateria	&AMateria::operator = (const AMateria &obj)
 {
-	std::cout << "AMateria assignment operator" << std::endl;
+	//std::cout << "AMateria assignment operator" << std::endl;
 	if (this != &obj)
 	{
 		this->_type = "NULL";
@@ -28,11 +28,16 @@ AMateria	&AMateria::operator = (const AMateria &obj)
 
 AMateria::AMateria(std::string const &type)
 {
-	std::cout << "AMateria parametrised" << std::endl;
+	//std::cout << "AMateria parametrised" << std::endl;
 	this->_type = type;
 }
 
 std::string	const & AMateria::getType() const
 {
 	return this->_type;
+}
+
+void AMateria::use(ICharacter& target)
+{
+	(void)target;
 }

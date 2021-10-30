@@ -2,24 +2,24 @@
 
 Cure::Cure()
 {
-	std::cout << "Cure default constructor" << std::endl;
-	this->_type = "Cure";
+	//std::cout << "Cure default constructor" << std::endl;
+	this->_type = "cure";
 }
 
 Cure::Cure(const Cure &obj)
 {
-	std::cout << "Cure Copy constructor" << std::endl;
+	//std::cout << "Cure Copy constructor" << std::endl;
 	*this = obj;
 }
 
 Cure::~Cure()
 {
-	std::cout << "Cure Destructor";
+	//std::cout << "Cure Destructor";
 }
 
 Cure	&Cure::operator = (const Cure &obj)
 {
-	std::cout << "Cure assignment operator" << std::endl;
+	//std::cout << "Cure assignment operator" << std::endl;
 	if (this != &obj)
 	{
 		this->_type = obj._type;

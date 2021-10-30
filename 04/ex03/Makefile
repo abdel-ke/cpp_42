@@ -1,11 +1,11 @@
-NAME = Animal
+NAME = Materia
 
 SRCS		=	main.cpp				\
 				srcs/AMateria.cpp		\
 				srcs/Character.cpp		\
 				srcs/Cure.cpp			\
 				srcs/Ice.cpp			\
-				srcs/MateriaSource.cpp	\
+				srcs/MateriaSource.cpp	
 
 HEADERS 	=	headers/AMateria.hpp		\
 				headers/ICharacter.hpp		\
@@ -13,7 +13,7 @@ HEADERS 	=	headers/AMateria.hpp		\
 				headers/Cure.hpp			\
 				headers/Ice.hpp				\
 				headers/IMateriaSource.hpp	\
-				headers/MateriaSource.hpp	\
+				headers/MateriaSource.hpp	
 
 CC			=	clang++
 

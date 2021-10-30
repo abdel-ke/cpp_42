@@ -2,32 +2,32 @@
 
 Character::Character() : _counter(0)
 {
-	std::cout << "Character default constructor" << std::endl;
+	// std::cout << "Character default constructor" << std::endl;
 }
 
-Character::Character(std::string name): _name(name)
+Character::Character(std::string name): _name(name), _counter(0)
 {
-	std::cout << "Character parametrized constructor" << std::endl;
+	//std::cout << "Character parametrized constructor" << std::endl;
 }
 
 Character::Character(const Character &obj)
 {
-	std::cout << "Character Copy constructor" << std::endl;
+	//std::cout << "Character Copy constructor" << std::endl;
 	*this = obj;
 }
 
 Character::~Character()
 {
-	std::cout << "Character Destructor";
+	//std::cout << "Character Destructor";
 }
 
 Character		&Character::operator = (const Character &obj)
 {
-	std::cout << "Character assignment operator" << std::endl;
-	if (this != &obj)
-	{
-		this->_name = obj._name;
-	}
+	//std::cout << "Character assignment operator" << std::endl;
+	this->_name = obj._name;
+	this->_counter = obj._counter;
+	for (int i = 0; i < this->_counter; i++)
+		this->_inventory[i] = this->_inventory[i]->clone();
 	return *this;
 }
 
@@ -39,7 +39,9 @@ std::string const & Character::getName() const
 void Character::equip(AMateria* m)
 {
 	if (_counter < 4)
+	{
 		_inventory[_counter++] = m;
+	}
 	else
 		std::cout << "FULL INVENTORY" << std::endl;
 }
@@ -60,8 +62,10 @@ void	Character::unequip(int idx)
 
 void	Character::use(int idx, ICharacter& target)
 {
-	 if (idx > -1 && idx < 4)
+	 if (idx > -1 && idx < 4 && idx < _counter)
+	 {
 	 	this->_inventory[idx]->use(target);
+	 }
 	else
 		std::cout << "idx not exist!!" << std::endl;
 }
