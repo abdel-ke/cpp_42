@@ -14,15 +14,15 @@ int main()
 		std::cerr << e.what();
 	}
 
-	try
-	{
-		Form ta("Form1", 50, 10);
-		Bureaucrat school("school", 49);
-		school.signForm(ta);
+	// try
+	// {
+	// 	Form ta("Form1", 50, 10);
+	// 	Bureaucrat school("school", 49);
+	// 	school.signForm(ta);
 
-	}
-	catch (const std::exception &e)
-	{
-		std::cerr << e.what();
-	}
+	// }
+	// catch (const std::exception &e)
+	// {
+	// 	std::cerr << e.what();
+	// }
 }

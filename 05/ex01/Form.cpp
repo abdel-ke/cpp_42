@@ -2,27 +2,27 @@
 
 Form::Form() : _name(""), _signed(false),_gradeSign(0) , _gradeExecute(0)
 {
-	// std::cout << "Form constructor" << std::endl;
+	std::cout << "Form constructor" << std::endl;
 }
 
 Form::~Form()
 {
-	// std::cout << "Form destructor" << std::endl;
+	std::cout << "Form destructor" << std::endl;
 }
 
 Form::Form(const Form &obj) : _name(obj._name), _signed(obj._signed), _gradeSign(obj._gradeSign), _gradeExecute(obj._gradeExecute)
 {
-	// std::cout << "Form copy costructor" << std::endl;
+	std::cout << "Form copy costructor" << std::endl;
 }
 
 Form::Form(std::string name, int gradeSign, int gradeExecute) : _name(name), _signed(false) , _gradeSign(gradeSign),_gradeExecute(gradeExecute)
 {
-	// std::cout << "Form Parametrized constructor" << std::endl;
+	std::cout << "Form Parametrized constructor" << std::endl;
 }
 
 Form &Form::operator=(const Form &obj)
 {
-	// std::cout << "Form assignment operator" << std::endl;
+	std::cout << "Form assignment operator" << std::endl;
 	if (this != &obj)
 		this->_signed = obj._signed;
 	return *this;

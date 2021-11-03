@@ -24,7 +24,7 @@ class Bureaucrat
 		Bureaucrat();
 		Bureaucrat(std::string, int grade);
 		Bureaucrat(const Bureaucrat &);
-		~Bureaucrat() {} ;
+		~Bureaucrat();
 		Bureaucrat	&operator = (const Bureaucrat &);
 		void	incHigh();
 		void	dincHigh();

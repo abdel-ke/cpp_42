@@ -1,12 +1,12 @@
 #include "RobotomyRequestForm.hpp"
 
 // RobotomyRequestForm::RobotomyRequestForm(): _name(""), _gradeSign(72), _gradeExecute(45)
-RobotomyRequestForm::RobotomyRequestForm(): Form("Robotomy Request", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(): Form("RobotoMy Request", 72, 45)
 {
 	// std::cout << "Robot Constructor" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target): Form("Robotomy Request", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(std::string target): Form("RobotoMy Request", 72, 45)
 {
 	// std::cout << "Robot Constructor" << std::endl;
 	this->setTarget(target);
