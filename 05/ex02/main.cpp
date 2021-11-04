@@ -9,7 +9,7 @@ int main()
 	try
 	{
 		Form *n = new ShrubberyCreationForm("Form-Home");
-		Bureaucrat b("ME1", 150);
+		Bureaucrat b("ME1", 15);
 		b.signForm(*n);
 		b.executeForm(*n);
 		delete n;

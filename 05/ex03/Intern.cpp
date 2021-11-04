@@ -2,24 +2,20 @@
 
 Intern::Intern()
 {
-	// std::cout << "Intern constructor" << std::endl;
 }
 
 Intern::Intern(Intern const &obj)
 {
-	// std::cout << "Intern Copy constructor" << std::endl;
 	*this = obj;
 }
 
 Intern	&Intern::operator=(Intern const &)
 {
-	// std::cout << "Intern assignment operator" << std::endl;
 	return *this;
 }
 
 Intern::~Intern()
 {
-	// std::cout << "Intern Destructor" << std::endl;
 }
 
 Form	*Intern::President(std::string target)

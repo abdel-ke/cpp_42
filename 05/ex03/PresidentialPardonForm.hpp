@@ -12,10 +12,6 @@ public:
 	~PresidentialPardonForm();
 	PresidentialPardonForm	&operator=(PresidentialPardonForm const &);
 	void	Action() const;
-	class FileNotOpenExeception : public std::exception
-	{
-		virtual const char *what() const throw();
-	};
 };
 
 #endif

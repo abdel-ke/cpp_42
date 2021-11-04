@@ -12,10 +12,6 @@ public:
 	~ShrubberyCreationForm();
 	ShrubberyCreationForm	&operator=(ShrubberyCreationForm const &);
 	void	Action() const;
-	class FileNotOpenExeception : std::exception
-	{
-		const char * what() const throw ();
-	};
 };
 
 #endif

@@ -2,17 +2,14 @@
 
 Form::Form() : _name(""), _signed(false),_signGrade(0) , _executeGrade(0)
 {
-	// std::cout << "Form constructor" << std::endl;
 }
 
 Form::~Form()
 {
-	// std::cout << "Form destructor" << std::endl;
 }
 
 Form::Form(std::string name, int gradeSign, int gradeExecute) : _name(name), _signed(false) , _signGrade(gradeSign),_executeGrade(gradeExecute)
 {
-	// std::cout << "Form Parametrized constructor" << std::endl;
 	if (_signGrade < 1)
 		GradeTooHighException();
 	if (_signGrade > 150)
@@ -25,12 +22,10 @@ Form::Form(std::string name, int gradeSign, int gradeExecute) : _name(name), _si
 
 Form::Form(const Form &obj) : _name(obj._name), _signed(obj._signed), _signGrade(obj._signGrade), _executeGrade(obj._executeGrade)
 {
-	// std::cout << "Form copy costructor" << std::endl;
 }
 
 Form &Form::operator=(const Form &obj)
 {
-	// std::cout << "Form assignment operator" << std::endl;
 	if (this != &obj)
 		this->_signed = obj._signed;
 	return *this;
@@ -58,7 +53,6 @@ int Form::getGradeSign() const
 
 std::ostream &operator<<(std::ostream &flux, const Form &obj)
 {
-	// flux << obj.getName() << " GradeSign " << obj.getGradeSign() << " GradeException " << obj.getGradeException() << std::endl;
 	if (obj.getSigned())
 		flux << " Name : " << obj.getName() << " SigneGrade : " << obj.getGradeSign() << " ExecuteGrade : " << obj.getGradeExecute() << " Form is signed\n";
 	else
