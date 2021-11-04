@@ -2,12 +2,12 @@
 
 Bureaucrat::Bureaucrat()
 {
-	std::cout << "constructor called" << std::endl;
+	// std::cout << "constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
-	std::cout << "Parametrized constructor called" << std::endl;
+	// std::cout << "Parametrized constructor called" << std::endl;
 	if (_grade < 1)
 		throw GradeTooHighException();
 	if (_grade > 150)
@@ -16,13 +16,13 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 
 Bureaucrat::Bureaucrat(const Bureaucrat &obj)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	*this = obj;
 }
 
 Bureaucrat	&Bureaucrat::operator = (const Bureaucrat &obj)
 {
-	std::cout << "Assignment operator = called" << std::endl;
+	// std::cout << "Assignment operator = called" << std::endl;
 	if (this != &obj)
 	{
 		(std::string)this->_name = (std::string)obj._name;
@@ -31,18 +31,18 @@ Bureaucrat	&Bureaucrat::operator = (const Bureaucrat &obj)
 	return *this;
 }
 
-void	Bureaucrat::incHigh()
+void	Bureaucrat::incGrade()
 {
-	if (this->_grade - 1 < 1)
+	if (this->_grade == 1)
 		throw GradeTooHighException();
-	this->_grade++;
+	this->_grade--;
 }
 
-void	Bureaucrat::dincHigh()
+void	Bureaucrat::decGrade()
 {
-	if (this->_grade + 1 > 150)
+	if (this->_grade == 150)
 		throw GradeTooLowException();
-	this->_grade--;
+	this->_grade++;
 }
 
 std::string	Bureaucrat::getName() const
@@ -57,7 +57,7 @@ int		Bureaucrat::getGrade() const
 
 std::ostream	&operator << (std::ostream &flux, const Bureaucrat & obj)
 {
-	std::cout << "Assignment operator << called" << std::endl;
+	// std::cout << "Assignment operator << called" << std::endl;
 	flux << obj.getName() << ", bureaucrat grade " << obj.getGrade();
 	return flux;
 }

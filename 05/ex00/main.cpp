@@ -4,12 +4,56 @@ int main()
 {
 	try
 	{
-		Bureaucrat b1("Bureau1", 10);
-		b1.incHigh();
-		std::cout << b1 << std::endl;
+		Bureaucrat school("school", 15);
+		std::cout << school << std::endl;
+		school.incGrade();
+		std::cout << school << std::endl;
+		school.decGrade();
+		std::cout << school << std::endl;
 	}
-	catch(std::exception &e)
+	catch (const std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
 	}
+	std::cout << "________________________________\n";
+	try
+	{
+		Bureaucrat school("school", -5);
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << "________________________________\n";
+	try
+	{
+		Bureaucrat school("school", 200);
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << "________________________________\n";
+	try
+	{
+		Bureaucrat school("school", 1);
+		std::cout << school << std::endl;
+		school.incGrade();
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << "________________________________\n";
+	try
+	{
+		Bureaucrat school("school", 150);
+		std::cout << school << std::endl;
+		school.decGrade();
+	}
+	catch (const std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	std::cout << "________________________________\n";
 }

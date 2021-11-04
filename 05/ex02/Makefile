@@ -12,7 +12,7 @@ HEADERS 	=	Bureaucrat.hpp				\
 				Form.hpp					\
 				ShrubberyCreationForm.hpp	\
 				RobotomyRequestForm.hpp		\
-				PresidentialPardonForm.hpp	\
+				PresidentialPardonForm.hpp
 
 CC			= clang++
 

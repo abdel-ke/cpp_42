@@ -1,6 +1,6 @@
 #include "Form.hpp"
 
-Form::Form() : _name(""), _signed(false),_gradeSign(0) , _gradeExecute(0)
+Form::Form() : _name(""), _signed(false),_signGrade(0) , _executeGrade(0)
 {
 	// std::cout << "Form constructor" << std::endl;
 }
@@ -10,14 +10,22 @@ Form::~Form()
 	// std::cout << "Form destructor" << std::endl;
 }
 
-Form::Form(const Form &obj) : _name(obj._name), _signed(obj._signed), _gradeSign(obj._gradeSign), _gradeExecute(obj._gradeExecute)
-{
-	// std::cout << "Form copy costructor" << std::endl;
-}
-
-Form::Form(std::string name, int gradeSign, int gradeExecute) : _name(name), _signed(false) , _gradeSign(gradeSign),_gradeExecute(gradeExecute)
+Form::Form(std::string name, int gradeSign, int gradeExecute) : _name(name), _signed(false) , _signGrade(gradeSign),_executeGrade(gradeExecute)
 {
 	// std::cout << "Form Parametrized constructor" << std::endl;
+	if (_signGrade < 1)
+		GradeTooHighException();
+	if (_signGrade > 150)
+		GradeTooLowException();
+	if (_executeGrade < 1)
+		GradeTooHighException();
+	if (_executeGrade > 150)
+		GradeTooLowException();
+}
+
+Form::Form(const Form &obj) : _name(obj._name), _signed(obj._signed), _signGrade(obj._signGrade), _executeGrade(obj._executeGrade)
+{
+	// std::cout << "Form copy costructor" << std::endl;
 }
 
 Form &Form::operator=(const Form &obj)
@@ -40,12 +48,12 @@ bool Form::getSigned() const
 
 int Form::getGradeExecute() const
 {
-	return _gradeExecute;
+	return _executeGrade;
 }
 
 int Form::getGradeSign() const
 {
-	return _gradeSign;
+	return _signGrade;
 }
 
 std::ostream &operator<<(std::ostream &flux, const Form &obj)
@@ -60,7 +68,7 @@ std::ostream &operator<<(std::ostream &flux, const Form &obj)
 
 void Form::beSigned(Bureaucrat &bure)
 {
-	if (bure.getGrade() <= _gradeSign)
+	if (bure.getGrade() <= _signGrade)
 		_signed = true;
 	else
 		throw GradeTooLowException();

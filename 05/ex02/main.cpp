@@ -9,9 +9,10 @@ int main()
 	try
 	{
 		Form *n = new ShrubberyCreationForm("Form-Home");
-		Bureaucrat b("ME1", 130);
+		Bureaucrat b("ME1", 150);
 		b.signForm(*n);
 		b.executeForm(*n);
+		delete n;
 	}
 	catch (std::exception &e)
 	{
@@ -22,11 +23,12 @@ int main()
 
 	try
 	{
-		Bureaucrat b("ME2", 40);
+		Bureaucrat b("ME2", -40);
 		Form *n = new RobotomyRequestForm("Robot");
 
 		b.signForm(*n);
 		b.executeForm(*n);
+		delete n;
 	}
 	catch (std::exception &e)
 	{
@@ -42,6 +44,7 @@ int main()
 
 		b.signForm(*n);
 		b.executeForm(*n);
+		delete n;
 	}
 	catch (std::exception &e)
 	{
@@ -55,6 +58,7 @@ int main()
 		Form *n = new ShrubberyCreationForm("home");
 		b.signForm(*n);
 		b.executeForm(*n);
+		delete n;
 	}
 	catch (std::exception &e)
 	{

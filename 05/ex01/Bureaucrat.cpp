@@ -36,14 +36,14 @@ Bureaucrat	&Bureaucrat::operator = (const Bureaucrat &obj)
 	return *this;
 }
 
-void	Bureaucrat::incHigh()
+void	Bureaucrat::incGrade()
 {
 	if (this->_grade - 1 < 1)
 		throw GradeTooHighException();
 	this->_grade++;
 }
 
-void	Bureaucrat::dincHigh()
+void	Bureaucrat::decGrade()
 {
 	if (this->_grade + 1 > 150)
 		throw GradeTooLowException();

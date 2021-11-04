@@ -6,16 +6,16 @@
 class ShrubberyCreationForm : public Form
 {
 public:
+	ShrubberyCreationForm();
+	ShrubberyCreationForm(std::string);
+	ShrubberyCreationForm(ShrubberyCreationForm const &);
+	~ShrubberyCreationForm();
+	ShrubberyCreationForm	&operator=(ShrubberyCreationForm const &);
+	void	Action() const;
 	class FileNotOpenExeception : std::exception
 	{
 		const char * what() const throw ();
 	};
-	ShrubberyCreationForm();
-	ShrubberyCreationForm(std::string);
-	ShrubberyCreationForm(ShrubberyCreationForm const &);
-	ShrubberyCreationForm	&operator=(ShrubberyCreationForm const &);
-	~ShrubberyCreationForm();
-	void	Action() const;
 };
 
 #endif
