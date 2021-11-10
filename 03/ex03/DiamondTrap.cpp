@@ -13,6 +13,9 @@ DiamondTrap::DiamondTrap(std::string name)
 	this->_Hitpoints = FragTrap::_Hitpoints;
 	this->_Enegy_point = ScavTrap::_Enegy_point;
 	this->_Attack_damage = FragTrap::_Attack_damage;
+	std::cout << "HIT " << this->_Hitpoints << std::endl;
+	std::cout << "ENE " << this->_Enegy_point << std::endl;
+	std::cout << "ATT " << this->_Attack_damage << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &obj)
