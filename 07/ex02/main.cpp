@@ -13,6 +13,7 @@ int main(int, char**)
         mirror[i] = value;
     }
     //SCOPE
+    // std::cout << "_____________________\n";
     {
         Array<int> tmp = numbers;
         Array<int> test(tmp);
